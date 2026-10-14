@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="380" style="background:#070a13; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b19" />
+      <stop offset="50%" stop-color="#0d142b" />
+      <stop offset="100%" stop-color="#090d1c" />
+    </linearGradient>
+
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="flowGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="flowGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Filter for Glow Effects -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Animation Styles -->
+    <style>
+      @keyframes dashFlow {
+        from { stroke-dashoffset: 120; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes pulseNode {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.4); opacity: 1; }
+      }
+      @keyframes waveFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes shimmerBar {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      .anim-flow {
+        stroke-dasharray: 8, 8;
+        animation: dashFlow 4s linear infinite;
+      }
+      .anim-flow-fast {
+        stroke-dasharray: 6, 6;
+        animation: dashFlow 2.5s linear infinite;
+      }
+      .node-pulse {
+        transform-origin: center;
+        animation: pulseNode 3s ease-in-out infinite;
+      }
+      .node-pulse-delay {
+        transform-origin: center;
+        animation: pulseNode 3s ease-in-out infinite 1.5s;
+      }
+      .card-float {
+        animation: waveFloat 6s ease-in-out infinite;
+      }
+      .shimmer {
+        animation: shimmerBar 3s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="380" fill="url(#bgGrad)" />
+
+  <!-- Subtle Cyber Grid Background -->
+  <g stroke="#334155" stroke-opacity="0.15" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="380" />
+    <line x1="300" y1="0" x2="300" y2="380" />
+    <line x1="450" y1="0" x2="450" y2="380" />
+    <line x1="600" y1="0" x2="600" y2="380" />
+    <line x1="750" y1="0" x2="750" y2="380" />
+    <line x1="900" y1="0" x2="900" y2="380" />
+    <line x1="1050" y1="0" x2="1050" y2="380" />
+  </g>
+
+  <!-- Ambient Light Orbs in Background -->
+  <circle cx="980" cy="120" r="140" fill="#6366f1" opacity="0.12" filter="url(#glow)" />
+  <circle cx="1100" cy="270" r="100" fill="#0ea5e9" opacity="0.1" filter="url(#glow)" />
+  <circle cx="150" cy="80" r="120" fill="#a855f7" opacity="0.08" filter="url(#glow)" />
+
+  <!-- Multi-Echelon Stock Allocation Flow Lines (Visual Network on Right Side) -->
+  <g fill="none" stroke-linecap="round">
+    <!-- Supplier to Central DC Flow -->
+    <path d="M 780 200 Q 860 140 940 180" stroke="url(#flowGrad1)" stroke-width="2.5" class="anim-flow" />
+    <!-- Central DC to Regional Fulfillment Nodes -->
+    <path d="M 940 180 Q 1020 120 1090 140" stroke="url(#flowGrad1)" stroke-width="2" class="anim-flow-fast" />
+    <path d="M 940 180 Q 1010 210 1080 220" stroke="url(#flowGrad2)" stroke-width="2" class="anim-flow" />
+    <path d="M 940 180 Q 990 280 1070 300" stroke="url(#flowGrad2)" stroke-width="2.5" class="anim-flow-fast" />
+    <path d="M 1080 220 L 1150 210" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.5" class="anim-flow" />
+    <path d="M 1090 140 L 1150 120" stroke="#34d399" stroke-opacity="0.4" stroke-width="1.5" class="anim-flow" />
+  </g>
+
+  <!-- Stock Allocation Dynamic Nodes (Right Background) -->
+  <g>
+    <!-- Supplier Hub -->
+    <circle cx="780" cy="200" r="6" fill="#38bdf8" opacity="0.9" />
+    <circle cx="780" cy="200" r="12" fill="none" stroke="#38bdf8" stroke-width="1.5" class="node-pulse" />
+    
+    <!-- Central DC (Main Echelon Hub) -->
+    <circle cx="940" cy="180" r="10" fill="#818cf8" filter="url(#softGlow)" />
+    <circle cx="940" cy="180" r="20" fill="none" stroke="#818cf8" stroke-width="2" class="node-pulse" />
+    
+    <!-- Regional Fulfillment / Store Nodes -->
+    <circle cx="1090" cy="140" r="6" fill="#34d399" />
+    <circle cx="1090" cy="140" r="14" fill="none" stroke="#34d399" stroke-width="1.5" class="node-pulse-delay" />
+
+    <circle cx="1080" cy="220" r="7" fill="#38bdf8" />
+    <circle cx="1080" cy="220" r="15" fill="none" stroke="#38bdf8" stroke-width="1.5" class="node-pulse" />
+
+    <circle cx="1070" cy="300" r="8" fill="#c084fc" />
+    <circle cx="1070" cy="300" r="16" fill="none" stroke="#c084fc" stroke-width="1.5" class="node-pulse-delay" />
+
+    <circle cx="1150" cy="120" r="5" fill="#38bdf8" opacity="0.7" />
+    <circle cx="1150" cy="210" r="5" fill="#34d399" opacity="0.7" />
+  </g>
+
+  <!-- Decorative Simulated Stock Optimization Chart Pill on Far Right -->
+  <g class="card-float" transform="translate(890, 45)">
+    <rect width="260" height="74" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1" />
+    <text x="18" y="26" fill="#94a3b8" font-size="11" font-weight="600" letter-spacing="0.5">STOCK REPLENISHMENT HEALTH</text>
+    <text x="18" y="52" fill="#34d399" font-size="20" font-weight="700">99.4%</text>
+    <text x="88" y="52" fill="#e2e8f0" font-size="12" font-weight="500">Service Level Hit</text>
+    <path d="M 180 50 L 195 44 L 210 47 L 225 35 L 242 30" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- FOREGROUND CONTENT: Header, Tagline, Feature Badges -->
+  <g transform="translate(60, 50)">
+    <!-- Category Pill Badge -->
+    <rect x="0" y="0" width="310" height="28" rx="14" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.2" />
+    <circle cx="14" cy="14" r="5" fill="#38bdf8" class="shimmer" />
+    <text x="28" y="18" fill="#a5b4fc" font-size="11" font-weight="700" letter-spacing="1.2">ENTERPRISE SUPPLY CHAIN INTELLIGENCE</text>
+
+    <!-- Main Title -->
+    <text x="0" y="78" fill="#ffffff" font-size="34" font-weight="800" letter-spacing="-0.5">
+      Retail Inventory &amp; Stock
+    </text>
+    <text x="0" y="122" fill="url(#primaryGrad)" font-size="34" font-weight="800" letter-spacing="-0.5">
+      Allocation Systems
+    </text>
+
+    <!-- Subtitle / Mission Statement -->
+    <text x="0" y="162" fill="#94a3b8" font-size="15" font-weight="400">
+      Curated Ecosystem of SaaS Platforms, Open-Source Solvers &amp; Multi-Echelon Engines
+    </text>
+    <text x="0" y="186" fill="#64748b" font-size="13.5" font-weight="400">
+      Empowering retailers with probabilistic forecasting, automated replenishment &amp; stockout mitigation.
+    </text>
+
+    <!-- Feature Pillars Badges in Foreground -->
+    <g transform="translate(0, 222)">
+      <!-- Pill 1: Demand Forecasting -->
+      <g transform="translate(0, 0)">
+        <rect width="180" height="34" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="12" y="22" fill="#38bdf8" font-size="14">📈</text>
+        <text x="35" y="21" fill="#e2e8f0" font-size="12" font-weight="600">Demand Forecasting</text>
+      </g>
+
+      <!-- Pill 2: Multi-Echelon MEIO -->
+      <g transform="translate(192, 0)">
+        <rect width="168" height="34" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="12" y="22" fill="#818cf8" font-size="14">⚡</text>
+        <text x="35" y="21" fill="#e2e8f0" font-size="12" font-weight="600">Multi-Echelon MEIO</text>
+      </g>
+
+      <!-- Pill 3: Automated Replenishment -->
+      <g transform="translate(372, 0)">
+        <rect width="186" height="34" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="12" y="22" fill="#34d399" font-size="14">🔄</text>
+        <text x="35" y="21" fill="#e2e8f0" font-size="12" font-weight="600">Auto-Replenishment</text>
+      </g>
+
+      <!-- Pill 4: Open-Source & SaaS -->
+      <g transform="translate(570, 0)">
+        <rect width="162" height="34" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+        <text x="12" y="22" fill="#c084fc" font-size="14">📦</text>
+        <text x="35" y="21" fill="#e2e8f0" font-size="12" font-weight="600">Open-Source &amp; SaaS</text>
+      </g>
+    </g>
+  </g>
+</svg>
